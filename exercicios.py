@@ -135,10 +135,13 @@
 
 ## 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
 
-# numero1 = float(input("Digite o primeiro número: "))
-# numero2 = float(input("Digite o segundo número: "))
-# comparacao = numero1 == numero2
-# print(comparacao)
+# try:
+#     numero1 = float(input("Digite o primeiro número: "))
+#     numero2 = float(input("Digite o segundo número: "))
+#     comparacao = numero1 == numero2
+#     print(comparacao)
+# except Exception as e:
+#     print(e)
 
 ## 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 
@@ -146,3 +149,90 @@
 # numero2 = float(input("Digite o segundo número: "))
 # resultado = numero1 != numero2
 # print(resultado)
+
+# Desafios
+
+## 21: Conversor de Temperatura
+## Escreva um programa que converta a temperatura de Celsius para Fahrenheit.
+## O programa deve solicitar ao usuário a temperatura em Celsius e, utilizando try-except,
+## garantir que a entrada seja numérica, tratando qualquer ValueError.
+## Imprima o resultado em Fahrenheit ou uma mensagem de erro se a entrada não for válida.
+
+# try:
+#     temperaturaCelsius = float(input("Digite a temperatura em °C: "))
+#     temperaturaFarenheit = temperaturaCelsius * 9/5 + 32
+#     print(f"{temperaturaCelsius}°C é equivalente a {temperaturaFarenheit}°F")
+# except ValueError as e:
+#     print(e)
+
+## 22: Verificador de Palíndromo
+## Crie um programa que verifica se uma palavra ou frase é um palíndromo (lê-se igualmente
+## de trás para frente, desconsiderando espaços e pontuações). Utilize try-except para
+## garantir que a entrada seja uma string. Dica: Utilize a função isinstance() para verificar o tipo da entrada.
+
+# import re
+# entrada = input("Digite uma frase ou palavra: ")
+
+# if isinstance(entrada, str):
+#     entrada_tratada = re.sub(r'[^\w\s]','',entrada.lower().replace(" ",""))
+#     eh_palindromo = entrada_tratada == entrada_tratada[::-1]
+#     print(eh_palindromo)
+# else:
+#     print("A variável de entrada não é uma string.")
+
+
+## 23: Calculadora Simples
+## Desenvolva uma calculadora simples que aceite duas entradas numéricas e um operador
+## (+, -, *, /) do usuário. Use try-except para lidar com divisões por zero e entradas não numéricas.
+## Utilize if-elif-else para realizar a operação matemática baseada no operador fornecido.
+## Imprima o resultado ou uma mensagem de erro apropriada.
+
+# try:
+#     numero1 = float(input("Número 1: "))
+#     numero2 = float(input("Número 2: "))
+#     operador = input("Escolha o operador (+, -, *, /): ")
+#     if (operador == "+"):
+#         resultado = numero1 + numero2
+#     elif (operador == "-"):
+#         resultado = numero1 - numero2
+#     elif (operador == "*"):
+#         resultado = numero1 * numero2
+#     elif (operador == "/"):
+#         resultado = numero1 / numero2
+
+#     print(f"{numero1} {operador} {numero2} = {resultado}")
+
+# except Exception as e:
+#     print(e)
+
+## 24: Classificador de Números
+## Escreva um programa que solicite ao usuário para digitar um número. Utilize try-except
+## para assegurar que a entrada seja numérica e utilize if-elif-else para classificar o número
+## como "positivo", "negativo" ou "zero". Adicionalmente, identifique se o número é "par" ou "ímpar".
+
+# try:
+#     numero = float(input("Digite um número: "))
+#     if numero > 0: print(f"{numero} é positivo")
+#     elif numero < 0: print(f"{numero} é negativo")
+#     elif numero ==0: print(f"{numero} é igual a zero")
+#     if numero % 2 == 0: print(f"e é par")
+#     else: print(f"e é ímpar")
+# except ValueError as e:
+#     print(e)
+
+## 25: Conversão de Tipo com Validação
+## Crie um script que solicite ao usuário uma lista de números separados por vírgula.
+## O programa deve converter a string de entrada em uma lista de números inteiros.
+## Utilize try-except para tratar a conversão de cada número e validar que cada elemento
+## da lista convertida é um inteiro. Se a conversão falhar ou um elemento não for um inteiro,
+## imprima uma mensagem de erro. Se a conversão for bem-sucedida para todos os elementos,
+## imprima a lista de inteiros.
+
+# try:
+#     lista = input("Digite uma lista de números separados por vírgula: ")
+#     lista = lista.split(",")
+#     for i in range(len(lista)):
+#         lista[i] = int(float(lista[i]))
+#     print(lista)
+# except Exception as e:
+#     print(e)
